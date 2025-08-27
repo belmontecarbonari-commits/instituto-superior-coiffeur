@@ -10,12 +10,16 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#inicio">Inicio</a></li>
-                <li><a href="#sobre-nosotros">Sobre Nosotros</a></li>
-                <li><a href="#cursos">Cursos</a></li>
-                <li><a href="#inscripcion">Inscripción</a></li>
-                <li><a href="#galeria">Galería</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#inicio" class="menu-link">Inicio</a></li>
+                <li class="dropdown">
+                    <a href="#sobre-nosotros" class="dropbtn">Sobre Nosotros</a>
+                    <div class="dropdown-content">
+                        <a href="#cursos" class="menu-link">Cursos</a>
+                        <a href="#inscripcion" class="menu-link">Inscripción</a>
+                        <a href="#galeria" class="menu-link">Galería</a>
+                        <a href="#contacto" class="menu-link">Contacto</a>
+                    </div>
+                </li>
             </ul>
         </nav>
         <h1>Bienvenido al Instituto Superior del Coiffeur</h1>
@@ -24,7 +28,7 @@
 
     <main>
         <section id="inicio">
-            <!-- Contenido de la sección de inicio -->
+            <!-- Solo Bienvenido al inicio -->
         </section>
 
         <section id="sobre-nosotros">
@@ -39,23 +43,23 @@
             <!-- Contenido de la sección de inscripción -->
         </section>
 
-        <!-- GALERÍA AJUSTADA -->
+        <!-- GALERÍA TIPO SLIDESHOW -->
         <section id="galeria">
             <h2>Galería</h2>
-            <div class="galeria">
-                <img src="./logos/A1.jpg" alt="Logo A1">
-                <img src="./logos/A2.jpg" alt="Logo A2">
-                <img src="./logos/A3.jpg" alt="Logo A3">
-                <img src="./logos/A4.jpg" alt="Logo A4">
-                <img src="./logos/A5.jpg" alt="Logo A5">
-                <img src="./logos/A6.jpg" alt="Logo A6">
-                <img src="./logos/A7.jpg" alt="Logo A7">
-                <img src="./logos/A8.jpg" alt="Logo A8">
-                <img src="./logos/A9.jpg" alt="Logo A9">
-                <img src="./logos/B1.jpg" alt="Logo B1">
-                <img src="./logos/B2.jpg" alt="Logo B2">
-                <img src="./logos/B3.jpg" alt="Logo B3">
-                <img src="./logos/B4.jpg" alt="Logo B4">
+            <div class="slideshow-container">
+                <img class="slide" src="./logos/A1.jpg" alt="Logo A1">
+                <img class="slide" src="./logos/A2.jpg" alt="Logo A2">
+                <img class="slide" src="./logos/A3.jpg" alt="Logo A3">
+                <img class="slide" src="./logos/A4.jpg" alt="Logo A4">
+                <img class="slide" src="./logos/A5.jpg" alt="Logo A5">
+                <img class="slide" src="./logos/A6.jpg" alt="Logo A6">
+                <img class="slide" src="./logos/A7.jpg" alt="Logo A7">
+                <img class="slide" src="./logos/A8.jpg" alt="Logo A8">
+                <img class="slide" src="./logos/A9.jpg" alt="Logo A9">
+                <img class="slide" src="./logos/B1.jpg" alt="Logo B1">
+                <img class="slide" src="./logos/B2.jpg" alt="Logo B2">
+                <img class="slide" src="./logos/B3.jpg" alt="Logo B3">
+                <img class="slide" src="./logos/B4.jpg" alt="Logo B4">
             </div>
         </section>
 
@@ -94,5 +98,31 @@
     </footer>
 
     <script src="script.js"></script>
+    <script>
+        // Scroll suave
+        document.querySelectorAll('.menu-link').forEach(link => {
+            link.addEventListener('click', function(e){
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                target.scrollIntoView({behavior: 'smooth'});
+            });
+        });
+
+        // Slideshow automático
+        let slideIndex = 0;
+        const slides = document.getElementsByClassName("slide");
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) { slideIndex = 1 }
+            slides[slideIndex-1].style.display = "block";
+            setTimeout(showSlides, 3000); // cambia cada 3 segundos
+        }
+
+        showSlides();
+    </script>
 </body>
 </html>
