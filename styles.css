@@ -104,8 +104,8 @@ footer {
     transition: opacity 1s ease-in-out;
 }
 
-/* Opcional: hover efecto suave */
 .slide:hover {
     transform: scale(1.02);
     transition: transform 0.5s;
 }
+
