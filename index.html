@@ -44,27 +44,35 @@
             <!-- Contenido de la sección de inscripción -->
         </section>
 
-        <!-- GALERÍA TIPO SLIDESHOW -->
+        <!-- GALERÍA TIPO CARRUSEL -->
         <section id="galeria">
             <h2>Galería</h2>
             <div class="slideshow-container">
-                <img class="slide" src="./logos/A1.jpg" alt="Logo A1">
-                <img class="slide" src="./logos/A2.jpg" alt="Logo A2">
-                <img class="slide" src="./logos/A3.jpg" alt="Logo A3">
-                <img class="slide" src="./logos/A4.jpg" alt="Logo A4">
-                <img class="slide" src="./logos/A5.jpg" alt="Logo A5">
-                <img class="slide" src="./logos/A6.jpg" alt="Logo A6">
-                <img class="slide" src="./logos/A7.jpg" alt="Logo A7">
-                <img class="slide" src="./logos/A8.jpg" alt="Logo A8">
-                <img class="slide" src="./logos/A9.jpg" alt="Logo A9">
-                <img class="slide" src="./logos/B1.jpg" alt="Logo B1">
-                <img class="slide" src="./logos/B2.jpg" alt="Logo B2">
-                <img class="slide" src="./logos/B3.jpg" alt="Logo B3">
-                <img class="slide" src="./logos/B4.jpg" alt="Logo B4">
+                <div class="slideshow-track">
+                    <img src="./logos/A1.jpg" alt="Logo A1">
+                    <img src="./logos/A2.jpg" alt="Logo A2">
+                    <img src="./logos/A3.jpg" alt="Logo A3">
+                    <img src="./logos/A4.jpg" alt="Logo A4">
+                    <img src="./logos/A5.jpg" alt="Logo A5">
+                    <img src="./logos/A6.jpg" alt="Logo A6">
+                    <img src="./logos/A7.jpg" alt="Logo A7">
+                    <img src="./logos/A8.jpg" alt="Logo A8">
+                    <img src="./logos/A9.jpg" alt="Logo A9">
+                    <img src="./logos/B1.jpg" alt="Logo B1">
+                    <img src="./logos/B2.jpg" alt="Logo B2">
+                    <img src="./logos/B3.jpg" alt="Logo B3">
+                    <img src="./logos/B4.jpg" alt="Logo B4">
+                    <!-- Repetimos para efecto infinito -->
+                    <img src="./logos/A1.jpg" alt="Logo A1">
+                    <img src="./logos/A2.jpg" alt="Logo A2">
+                    <img src="./logos/A3.jpg" alt="Logo A3">
+                    <img src="./logos/A4.jpg" alt="Logo A4">
+                </div>
             </div>
         </section>
 
-        <section id="contacto">
+        <!-- CONTACTO OCULTO AL INICIO -->
+        <section id="contacto" class="hidden">
             <h2>Contacto</h2>
 
             <p>Teléfono: +54 35117487208</p>
@@ -98,32 +106,7 @@
         <p>&copy; 2023 Instituto. Todos los derechos reservados.</p>
     </footer>
 
-    <script>
-        // Scroll suave
-        document.querySelectorAll('.menu-link').forEach(link => {
-            link.addEventListener('click', function(e){
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                target.scrollIntoView({behavior: 'smooth'});
-            });
-        });
-
-        // Slideshow automático
-        let slideIndex = 0;
-        const slides = document.getElementsByClassName("slide");
-
-        function showSlides() {
-            for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            slides[slideIndex-1].style.display = "block";
-            setTimeout(showSlides, 3000); // cambia cada 3 segundos
-        }
-
-        showSlides();
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
 
