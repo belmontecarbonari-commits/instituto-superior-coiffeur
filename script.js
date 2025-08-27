@@ -1,11 +1,10 @@
-// SCROLL SUAVE Y MOSTRAR SECCIONES
+// ---------------- SCROLL SUAVE Y CONTACTO ----------------
 document.querySelectorAll('.menu-link').forEach(link => {
     link.addEventListener('click', function(e){
         e.preventDefault();
         const targetId = this.getAttribute('href').substring(1);
         let target = document.getElementById(targetId);
 
-        // Crear sección contacto dinámicamente si no existe
         if(targetId === "contacto" && !target) {
             target = document.createElement('section');
             target.id = "contacto";
@@ -32,9 +31,44 @@ document.querySelectorAll('.menu-link').forEach(link => {
                 </form>
             `;
             document.querySelector('main').appendChild(target);
-        }
 
-        // Scroll suave hacia la sección
-        target.scrollIntoView({behavior: 'smooth'});
+            setTimeout(() => {
+                target.scrollIntoView({behavior: 'smooth'});
+            }, 50);
+        } else {
+            target.scrollIntoView({behavior: 'smooth'});
+        }
     });
 });
+
+// ---------------- CARRUSEL SLIDER ----------------
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const prevBtn = document.querySelector('.prev');
+const nextBtn = document.querySelector('.next');
+let currentIndex = 0;
+const slideWidth = slides[0].getBoundingClientRect().width + 10;
+
+// Función mover slider
+function goToSlide(index){
+    track.style.transform = `translateX(-${slideWidth * index}px)`;
+    currentIndex = index;
+}
+
+// Flechas
+prevBtn.addEventListener('click', () => {
+    if(currentIndex === 0) currentIndex = slides.length - 1;
+    else currentIndex--;
+    goToSlide(currentIndex);
+});
+
+nextBtn.addEventListener('click', () => {
+    if(currentIndex === slides.length - 1) currentIndex = 0;
+    else currentIndex++;
+    goToSlide(currentIndex);
+});
+
+// Slider automático
+setInterval(() => {
+    nextBtn.click();
+}, 3000);
