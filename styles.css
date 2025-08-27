@@ -1,5 +1,5 @@
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Times New Roman', sans-serif;
     margin: 0;
     padding: 0;
     background-color: white;
@@ -58,10 +58,6 @@ nav ul li:hover {
     display: block;
 }
 
-nav ul li a:hover {
-    background-color: darkviolet;
-}
-
 /* BOTONES */
 button {
     background-color: black;
@@ -86,63 +82,28 @@ footer {
     color: white;
 }
 
-/* CARRUSEL */
-.carousel-container {
-    position: relative;
+/* GALERÍA MARQUEE SUAVE */
+.gallery-marquee {
     overflow: hidden;
-    max-width: 90%;
+    width: 90%;
     margin: 20px auto;
-    border-radius: 10px;
 }
 
-.carousel-track {
+.gallery-track {
     display: flex;
-    transition: transform 0.5s ease;
+    animation: scroll 30s linear infinite;
 }
 
-.carousel-track img {
+.gallery-track img {
     width: 200px;
     margin-right: 10px;
     border-radius: 8px;
     object-fit: cover;
 }
 
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
+@keyframes scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.carousel-dots {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.carousel-dots span {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: gray;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.carousel-dots .active {
-    background: black;
-}
-
-/* CONTACTO OCULTO */
-.hidden {
-    display: none;
-}
+/* CONTACTO OCULTO SE CREA DINÁMICAMENTE */

@@ -1,148 +1,40 @@
-body {
-    font-family: 'Arial', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: white;
-    color: black;
-}
+// SCROLL SUAVE Y MOSTRAR SECCIONES
+document.querySelectorAll('.menu-link').forEach(link => {
+    link.addEventListener('click', function(e){
+        e.preventDefault();
+        const targetId = this.getAttribute('href').substring(1);
+        let target = document.getElementById(targetId);
 
-header {
-    background-color: violet;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
+        // Crear sección contacto dinámicamente si no existe
+        if(targetId === "contacto" && !target) {
+            target = document.createElement('section');
+            target.id = "contacto";
+            target.innerHTML = `
+                <h2>Contacto</h2>
+                <p>Teléfono: +54 35117487208</p>
+                <p>Email: institutosuperior18@gmail.com</p>
+                <p>Dirección: Av. Colon 118, Córdoba, Argentina</p>
+                <h3>Redes sociales</h3>
+                <ul>
+                    <li><a href="https://www.facebook.com/Academiadepeluqueriacba/" target="_blank">Facebook</a></li>
+                    <li><a href="https://www.instagram.com/institutosuperiordecoiffeur/?hl=es" target="_blank">Instagram</a></li>
+                    <li><a href="https://wa.me/54123456789" target="_blank">WhatsApp</a></li>
+                </ul>
+                <h3>Formulario de contacto</h3>
+                <form action="#" method="post">
+                    <label for="nombre">Nombre:</label>
+                    <input type="text" id="nombre" name="nombre" required>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="mensaje">Mensaje:</label>
+                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            `;
+            document.querySelector('main').appendChild(target);
+        }
 
-/* MENÚ DESPLEGABLE */
-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    background-color: violet;
-}
-
-nav ul li {
-    position: relative;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    display: block;
-}
-
-nav ul li:hover {
-    background-color: darkviolet;
-    border-radius: 5px;
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: violet;
-    min-width: 150px;
-    z-index: 1;
-    border-radius: 5px;
-}
-
-.dropdown-content a {
-    padding: 10px;
-    display: block;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-nav ul li a:hover {
-    background-color: darkviolet;
-}
-
-/* BOTONES */
-button {
-    background-color: black;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: darkgray;
-}
-
-main {
-    padding: 20px;
-}
-
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: black;
-    color: white;
-}
-
-/* CARRUSEL */
-.carousel-container {
-    position: relative;
-    overflow: hidden;
-    max-width: 90%;
-    margin: 20px auto;
-    border-radius: 10px;
-}
-
-.carousel-track {
-    display: flex;
-    transition: transform 0.5s ease;
-}
-
-.carousel-track img {
-    width: 200px;
-    margin-right: 10px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-.prev, .next {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: rgba(0,0,0,0.5);
-    color: white;
-    border: none;
-    font-size: 24px;
-    padding: 10px;
-    cursor: pointer;
-    border-radius: 50%;
-}
-
-.prev { left: 10px; }
-.next { right: 10px; }
-
-.carousel-dots {
-    text-align: center;
-    margin-top: 10px;
-}
-
-.carousel-dots span {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: gray;
-    border-radius: 50%;
-    margin: 0 5px;
-    cursor: pointer;
-}
-
-.carousel-dots .active {
-    background: black;
-}
-
-/* CONTACTO OCULTO */
-.hidden {
-    display: none;
-}
+        // Scroll suave hacia la sección
+        target.scrollIntoView({behavior: 'smooth'});
+    });
+});
