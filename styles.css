@@ -13,7 +13,7 @@ header {
     text-align: center;
 }
 
-/* ----------------- MENÚ ----------------- */
+/* MENÚ DESPLEGABLE */
 nav ul {
     list-style: none;
     padding: 0;
@@ -62,7 +62,7 @@ nav ul li a:hover {
     background-color: darkviolet;
 }
 
-/* ----------------- BOTONES ----------------- */
+/* BOTONES */
 button {
     background-color: black;
     color: white;
@@ -86,35 +86,63 @@ footer {
     color: white;
 }
 
-/* ----------------- GALERÍA CARRUSEL ----------------- */
-.slideshow-container {
+/* CARRUSEL */
+.carousel-container {
+    position: relative;
     overflow: hidden;
     max-width: 90%;
     margin: 20px auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-.slideshow-track {
+.carousel-track {
     display: flex;
-    gap: 10px;
-    animation: slide 30s linear infinite;
+    transition: transform 0.5s ease;
 }
 
-.slideshow-track img {
+.carousel-track img {
     width: 200px;
-    height: auto;
+    margin-right: 10px;
     border-radius: 8px;
     object-fit: cover;
 }
 
-@keyframes slide {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
 }
 
-/* ----------------- CONTACTO OCULTO ----------------- */
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.carousel-dots {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.carousel-dots span {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: gray;
+    border-radius: 50%;
+    margin: 0 5px;
+    cursor: pointer;
+}
+
+.carousel-dots .active {
+    background: black;
+}
+
+/* CONTACTO OCULTO */
 .hidden {
     display: none;
 }
-
