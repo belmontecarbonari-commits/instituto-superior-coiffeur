@@ -90,9 +90,10 @@ footer {
 .carousel-container {
     position: relative;
     overflow: hidden;
-    max-width: 90%;
+    max-width: 600px;
     margin: 20px auto;
     border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
 
 .carousel-track {
@@ -101,10 +102,13 @@ footer {
 }
 
 .carousel-track img {
-    width: 200px;
-    margin-right: 10px;
-    border-radius: 8px;
+    width: 100%;
+    max-width: 500px;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 10px;
     object-fit: cover;
+    flex-shrink: 0;
 }
 
 .prev, .next {
@@ -123,3 +127,84 @@ footer {
 
 .prev { left: 10px; }
 .next { right: 10px; }
+
+/* FORMULARIO DE CONTACTO */
+#contacto {
+    max-width: 600px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+#contacto h2, 
+#contacto h3 {
+    text-align: center;
+    color: darkviolet;
+}
+
+#contacto p {
+    text-align: center;
+    margin: 5px 0;
+}
+
+#contacto ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+#contacto ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+#contacto ul li a {
+    color: darkviolet;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+#contacto label {
+    margin: 5px 0 3px;
+    font-weight: bold;
+}
+
+#contacto input,
+#contacto textarea {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+#contacto input:focus,
+#contacto textarea:focus {
+    border-color: violet;
+    outline: none;
+    box-shadow: 0 0 5px rgba(238,130,238,0.5);
+}
+
+#contacto button {
+    background-color: violet;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#contacto button:hover {
+    background-color: darkviolet;
+}
+
