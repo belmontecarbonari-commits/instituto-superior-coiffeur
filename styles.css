@@ -50,36 +50,41 @@ nav a, nav button {
 
 .galeria img {
   max-width: 250px;
-  height: auto;
-  object-fit: contain; /* mantiene proporción */
+  width: 100%;
+  height: auto;        /* mantener proporción */
+  object-fit: contain;  /* no recortar imágenes */
   display: block;
   margin: 0 auto;
   border-radius: 10px;
 }
 
-/* Modal */
-.modal {
-  display: none; 
-  position: fixed; 
-  z-index: 1000;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-}
-
-.modal-content {
-  background: white;
-  margin: 10% auto;
+/* Sección contacto oculta inicialmente */
+#contacto {
+  display: none;
   padding: 20px;
+  background: #f9f9f9;
+  margin: 20px auto;
+  max-width: 600px;
   border-radius: 10px;
-  width: 80%;
-  max-width: 400px;
   text-align: left;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.cerrar {
-  float: right;
-  font-size: 24px;
+#contacto form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+#contacto input, #contacto textarea, #contacto button {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+#contacto button {
+  background: #ff66cc;
+  color: white;
+  border: none;
   cursor: pointer;
 }
-

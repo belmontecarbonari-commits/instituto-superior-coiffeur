@@ -1,15 +1,13 @@
-function abrirContacto() {
-  document.getElementById("modal-contacto").style.display = "block";
-}
+// Mostrar la sección contacto solo al hacer click
+document.getElementById("mostrar-contacto").addEventListener("click", function() {
+    const contacto = document.getElementById("contacto");
+    contacto.style.display = "block";
+    this.style.display = "none"; // ocultar el botón después
+});
 
-function cerrarContacto() {
-  document.getElementById("modal-contacto").style.display = "none";
-}
-
-// Cerrar modal al hacer clic afuera
-window.onclick = function(event) {
-  let modal = document.getElementById("modal-contacto");
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-};
+// Evitar que el formulario haga refresh y mostrar alerta
+document.getElementById("form-contacto").addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("Mensaje enviado ✅");
+    this.reset();
+});
