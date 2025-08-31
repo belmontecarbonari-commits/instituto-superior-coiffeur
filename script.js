@@ -1,7 +1,6 @@
 // Mostrar la sección contacto solo al hacer click
 document.getElementById("mostrar-contacto").addEventListener("click", function() {
-    const contacto = document.getElementById("contacto");
-    contacto.style.display = "block";
+    document.getElementById("contacto").style.display = "block";
     this.style.display = "none"; // ocultar el botón después
 });
 

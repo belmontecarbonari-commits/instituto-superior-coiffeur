@@ -1,6 +1,6 @@
 /* General */
 body {
-  font-family: Arial, sans-serif;
+  font-family: Times New Roman, sans-serif;
   margin: 0;
   padding: 0;
   text-align: center;
@@ -51,40 +51,74 @@ nav a, nav button {
 .galeria img {
   max-width: 250px;
   width: 100%;
-  height: auto;        /* mantener proporción */
-  object-fit: contain;  /* no recortar imágenes */
+  height: auto;        /* mantiene proporción */
+  object-fit: contain;  /* no recorta imágenes */
   display: block;
   margin: 0 auto;
   border-radius: 10px;
 }
 
-/* Sección contacto oculta inicialmente */
+/* CONTACTO MEJORADO */
 #contacto {
-  display: none;
-  padding: 20px;
-  background: #f9f9f9;
-  margin: 20px auto;
+  display: none; /* oculto al inicio */
+  padding: 30px;
   max-width: 600px;
-  border-radius: 10px;
+  margin: 20px auto;
+  background: #fff0f8;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
   text-align: left;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+#contacto h2 {
+  text-align: center;
+  color: #ff66cc;
+  margin-bottom: 15px;
+}
+
+.contact-container p {
+  margin: 5px 0;
+  font-size: 16px;
+}
+
+.contact-redes {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  gap: 15px;
+}
+
+.contact-redes li a {
+  text-decoration: none;
+  color: #ff66cc;
+  font-weight: bold;
 }
 
 #contacto form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 12px;
+  margin-top: 15px;
 }
 
-#contacto input, #contacto textarea, #contacto button {
-  padding: 8px;
-  border-radius: 5px;
+#contacto input, #contacto textarea {
+  padding: 10px;
+  border-radius: 8px;
   border: 1px solid #ccc;
+  font-size: 14px;
 }
 
 #contacto button {
   background: #ff66cc;
   color: white;
   border: none;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
+}
+
+#contacto button:hover {
+  background: #ff4ba0;
 }
