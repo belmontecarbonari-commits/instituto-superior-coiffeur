@@ -14,7 +14,37 @@
   background: #ff4ba0;
 }
 
-/* SLIDER GALERÍA */
+/* Menú más elegante */
+nav .dropbtn {
+  background: #ff66cc;
+  padding: 10px 20px;
+  border-radius: 20px;
+  color: white;
+  font-weight: bold;
+}
+nav .dropdown-content {
+  display: none;
+  position: absolute;
+  background: white;
+  min-width: 180px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+nav .dropdown-content a {
+  display: block;
+  padding: 10px;
+  text-decoration: none;
+  color: #333;
+}
+nav .dropdown-content a:hover {
+  background: #ffebf6;
+  color: #ff4ba0;
+}
+nav .dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Galería slider automático */
 .slider {
   overflow: hidden;
   margin: 40px auto;
@@ -28,7 +58,6 @@
 }
 .slider img {
   width: 200px;
-  height: auto;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
