@@ -1,12 +1,5 @@
-// Mostrar la sección contacto solo al hacer click
-document.getElementById("mostrar-contacto").addEventListener("click", function() {
-    document.getElementById("contacto").style.display = "block";
-    this.style.display = "none"; // ocultar el botón después
-});
-
-// Evitar que el formulario haga refresh y mostrar alerta
-document.getElementById("form-contacto").addEventListener("submit", function(e) {
+// Mostrar la sección contacto al hacer click en el menú
+document.getElementById("mostrar-contacto").addEventListener("click", function(e) {
     e.preventDefault();
-    alert("Mensaje enviado ✅");
-    this.reset();
+    document.getElementById("contacto").style.display = "block";
 });
