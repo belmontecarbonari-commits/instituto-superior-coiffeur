@@ -14,44 +14,6 @@
   background: #ff4ba0;
 }
 
-/* Menú desplegable más elegante */
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: flex-start;
-  margin: 0;
-  padding: 10px 20px;
-}
-nav .dropbtn {
-  background: #ff66cc;
-  padding: 10px 20px;
-  border-radius: 20px;
-  color: white;
-  font-weight: bold;
-}
-nav .dropdown-content {
-  display: none;
-  position: absolute;
-  background: white;
-  min-width: 180px;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  padding: 10px 0;
-}
-nav .dropdown-content a {
-  display: block;
-  padding: 10px;
-  text-decoration: none;
-  color: #333;
-}
-nav .dropdown-content a:hover {
-  background: #ffebf6;
-  color: #ff4ba0;
-}
-nav .dropdown:hover .dropdown-content {
-  display: block;
-}
-
 /* SLIDER GALERÍA */
 .slider {
   overflow: hidden;
@@ -61,7 +23,8 @@ nav .dropdown:hover .dropdown-content {
 .slider-track {
   display: flex;
   gap: 15px;
-  animation: scroll 25s linear infinite;
+  animation: scroll 40s linear infinite;
+  width: max-content;
 }
 .slider img {
   width: 200px;
@@ -72,108 +35,4 @@ nav .dropdown:hover .dropdown-content {
 @keyframes scroll {
   0% { transform: translateX(0); }
   100% { transform: translateX(-50%); }
-}
-
-
-nav a, nav button {
-  text-decoration: none;
-  color: white;
-  background: transparent;
-  border: none;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Inicio */
-#inicio {
-  padding: 50px;
-  background: #f6b2f1;
-}
-
-#inicio h1 {
-  font-size: 2em;
-  margin-bottom: 20px;
-}
-
-/* Galería */
-.galeria {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 20px;
-}
-
-.galeria img {
-  max-width: 250px;
-  width: 100%;
-  height: auto;        /* mantiene proporción */
-  object-fit: contain;  /* no recorta imágenes */
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-}
-
-/* CONTACTO MEJORADO */
-#contacto {
-  display: none; /* oculto al inicio */
-  padding: 30px;
-  max-width: 600px;
-  margin: 20px auto;
-  background: #fff0f8;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.15);
-  text-align: left;
-  font-family: Arial, sans-serif;
-}
-
-#contacto h2 {
-  text-align: center;
-  color: #ff66cc;
-  margin-bottom: 15px;
-}
-
-.contact-container p {
-  margin: 5px 0;
-  font-size: 16px;
-}
-
-.contact-redes {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 15px;
-}
-
-.contact-redes li a {
-  text-decoration: none;
-  color: #ff66cc;
-  font-weight: bold;
-}
-
-#contacto form {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-#contacto input, #contacto textarea {
-  padding: 10px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  font-size: 14px;
-}
-
-#contacto button {
-  background: #ff66cc;
-  color: white;
-  border: none;
-  padding: 10px;
-  border-radius: 8px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-#contacto button:hover {
-  background: #ff4ba0;
 }
