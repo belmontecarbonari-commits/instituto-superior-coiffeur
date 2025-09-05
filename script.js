@@ -1,24 +1,29 @@
-// --------- GALERÍA CARRUSEL ---------
+// --------- GALERÍA CARRUSEL INFINITO + AUTO-PLAY ---------
 const track = document.querySelector(".carousel-track");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 
 let index = 0;
-const slideWidth = 320; // ancho img + margen
+const slideWidth = 320; // ancho imagen + margen
+const totalSlides = track.children.length;
 
-nextBtn.addEventListener("click", () => {
-    if (index < track.children.length - 1) {
+// mover carrusel
+function moverCarrusel(direccion) {
+    if (direccion === "next") {
         index++;
-        track.style.transform = `translateX(${-slideWidth * index}px)`;
-    }
-});
-
-prevBtn.addEventListener("click", () => {
-    if (index > 0) {
+        if (index >= totalSlides) index = 0; // vuelve al inicio
+    } else {
         index--;
-        track.style.transform = `translateX(${-slideWidth * index}px)`;
+        if (index < 0) index = totalSlides - 1; // vuelve al final
     }
-});
+    track.style.transform = `translateX(${-slideWidth * index}px)`;
+}
+
+nextBtn.addEventListener("click", () => moverCarrusel("next"));
+prevBtn.addEventListener("click", () => moverCarrusel("prev"));
+
+// autoplay cada 3s
+setInterval(() => moverCarrusel("next"), 3000);
 
 // --------- MODAL CONTACTO ---------
 const modal = document.getElementById("contacto-modal");
