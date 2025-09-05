@@ -3,20 +3,32 @@ const track = document.querySelector(".carousel-track");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 
-let index = 0; 
-const slideWidth = 320; // ancho imagen + margen
-const totalSlides = track.children.length;
+// duplicar imágenes para simular loop infinito
+track.innerHTML += track.innerHTML;
 
-// mover carrusel
+// ancho dinámico
+let slideWidth = track.children[0].getBoundingClientRect().width + 20;
+let index = 0;
+
 function moverCarrusel(direccion) {
     if (direccion === "next") {
         index++;
-        if (index >= totalSlides) index = 0; // vuelve al inicio
     } else {
         index--;
-        if (index < 0) index = totalSlides - 1; // vuelve al final
+        if (index < 0) index = track.children.length / 2;
     }
-    track.style.transform = `translateX(${-slideWidth * index}px)`;
+
+    // resetear cuando llega al final de la primera tanda
+    if (index >= track.children.length / 2) {
+        index = 0;
+        track.style.transition = "none";
+        track.style.transform = `translateX(0px)`;
+        setTimeout(() => {
+            track.style.transition = "transform 0.5s ease-in-out";
+        }, 50);
+    } else {
+        track.style.transform = `translateX(${-slideWidth * index}px)`;
+    }
 }
 
 nextBtn.addEventListener("click", () => moverCarrusel("next"));

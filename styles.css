@@ -1,11 +1,12 @@
 /* ---------- ESTILO GENERAL ---------- */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;  
+    margin: 0;
     padding: 0;
     line-height: 1.6;
     background-color: #fafafa;
     color: #333;
+    overflow-x: hidden; /* evita scroll horizontal */
 }
 
 header {
@@ -107,6 +108,8 @@ nav a {
 .carousel-track {
     display: flex;
     transition: transform 0.5s ease-in-out;
+    width: max-content;      /* ajusta ancho al contenido */
+    will-change: transform;  /* mejora rendimiento */
 }
 
 .carousel-track img {
