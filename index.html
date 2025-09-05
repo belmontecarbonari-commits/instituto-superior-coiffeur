@@ -18,15 +18,13 @@
                         <a href="#cursos" class="menu-link">Cursos</a>
                         <a href="#inscripcion" class="menu-link">Inscripción</a>
                         <a href="#galeria" class="menu-link">Galería</a>
-                        <a href="#contacto" class="menu-link">Contacto</a>
+                        <a href="#" id="abrir-contacto">Contacto</a>
                     </div>
                 </li>
             </ul>
         </nav>
         <h1>Bienvenido al Instituto Superior del Coiffeur</h1>
         <button onclick="location.href='#inscripcion'">Inscríbete Ya</button>
-        <!-- Botón para mostrar contacto -->
-        <button id="mostrar-contacto">Contacto</button>
     </header>
 
     <main>
@@ -39,6 +37,7 @@
         <section id="galeria">
             <h2>Galería</h2>
             <div class="carousel-container">
+                <button class="prev">&#10094;</button>
                 <div class="carousel-track">
                     <img src="./logos/A1.jpg" alt="Logo A1">
                     <img src="./logos/A2.jpg" alt="Logo A2">
@@ -47,44 +46,33 @@
                     <img src="./logos/A5.jpg" alt="Logo A5">
                     <img src="./logos/A6.jpg" alt="Logo A6">
                     <img src="./logos/A7.jpg" alt="Logo A7">
-                    <img src="./logos/A8.jpg" alt="Logo A8">
                     <img src="./logos/A9.jpg" alt="Logo A9">
                     <img src="./logos/B1.jpg" alt="Logo B1">
                     <img src="./logos/B2.jpg" alt="Logo B2">
                     <img src="./logos/B3.jpg" alt="Logo B3">
                     <img src="./logos/B4.jpg" alt="Logo B4">
                 </div>
-                <button class="prev">&#10094;</button>
                 <button class="next">&#10095;</button>
             </div>
         </section>
-
-        <!-- CONTACTO -->
-        <section id="contacto" style="display:none;">
-            <h2>Contacto</h2>
-            <div class="contact-container">
-                <p>Teléfono: +54 35117487208</p>
-                <p>Email: institutosuperior18@gmail.com</p>
-                <p>Dirección: Av. Colon 118, Córdoba, Argentina</p>
-                <h3>Redes sociales</h3>
-                <ul class="contact-redes">
-                    <li><a href="https://www.facebook.com/Academiadepeluqueriacba/" target="_blank">Facebook</a></li>
-                    <li><a href="https://www.instagram.com/institutosuperiordecoiffeur/?hl=es" target="_blank">Instagram</a></li>
-                    <li><a href="https://wa.me/54123456789" target="_blank">WhatsApp</a></li>
-                </ul>
-                <h3>Formulario de contacto</h3>
-                <form id="form-contacto" action="#" method="post">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" id="nombre" name="nombre" required>
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                    <label for="mensaje">Mensaje:</label>
-                    <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
-                    <button type="submit">Enviar</button>
-                </form>
-            </div>
-        </section>
     </main>
+
+    <!-- MODAL CONTACTO -->
+    <div id="contacto-modal" class="modal">
+        <div class="modal-content">
+            <span class="cerrar">&times;</span>
+            <h2>Contacto</h2>
+            <p>Teléfono: +54 35117487208</p>
+            <p>Email: institutosuperior18@gmail.com</p>
+            <p>Dirección: Av. Colon 118, Córdoba, Argentina</p>
+            <h3>Redes sociales</h3>
+            <ul class="contact-redes">
+                <li><a href="https://www.facebook.com/Academiadepeluqueriacba/" target="_blank">Facebook</a></li>
+                <li><a href="https://www.instagram.com/institutosuperiordecoiffeur/?hl=es" target="_blank">Instagram</a></li>
+                <li><a href="https://wa.me/54123456789" target="_blank">WhatsApp</a></li>
+            </ul>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2023 Instituto. Todos los derechos reservados.</p>

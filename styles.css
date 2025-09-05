@@ -1,24 +1,193 @@
-@@ -50,3 +50,23 @@ footer {
-    background-color: black;
+/* ---------- ESTILO GENERAL ---------- */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background-color: #fafafa;
+    color: #333;
+}
+
+header {
+    background: linear-gradient(135deg, #111, #444);
     color: white;
+    text-align: center;
+    padding: 50px 20px;
 }
 
-/* ----------------- GALERÍA ----------------- */
-.galeria {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 15px;
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+header button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.3s ease;
+}
+
+header button:hover {
+    background-color: #c2185b;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    min-width: 150px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
     padding: 10px;
+    color: black;
 }
 
-.galeria img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
+.dropdown-content a:hover {
+    background-color: #eee;
+}
+
+/* ---------- GALERÍA ---------- */
+.galeria {
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.carousel-container {
+    position: relative;
+    max-width: 90%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    background: #fff;
+    padding: 20px;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-track img {
+    width: 300px;
+    height: 200px;
     object-fit: cover;
+    margin: 0 10px;
+    border-radius: 10px;
     transition: transform 0.3s;
 }
 
-.galeria img:hover {
+.carousel-track img:hover {
     transform: scale(1.05);
+}
+
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* ---------- MODAL ---------- */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    color: #e91e63;
+}
+
+.cerrar {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.contact-redes {
+    list-style: none;
+    padding: 0;
+}
+
+.contact-redes li {
+    margin: 10px 0;
+}
+
+.contact-redes a {
+    color: #e91e63;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.contact-redes a:hover {
+    text-decoration: underline;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+    background-color: black;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
