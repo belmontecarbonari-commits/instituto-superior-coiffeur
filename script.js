@@ -3,7 +3,7 @@ const track = document.querySelector(".carousel-track");
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 
-let index = 0;
+let index = 0; 
 const slideWidth = 320; // ancho imagen + margen
 const totalSlides = track.children.length;
 
