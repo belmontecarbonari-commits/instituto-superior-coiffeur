@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const course = document.getElementById('interest').value;
 
             // This would normally be the academy's real WhatsApp number.
-            const phoneNumber = "3517487208";
+            const phoneNumber = "5493517487208";
 
             const message = `¡Hola Instituto Superior del Coiffeur! Soy ${name}. Estoy interesado en transformar mi futuro con el curso de ${course}. Me gustaría recibir la informacion completa y conocer el costo de los cursos. ¡Gracias!`;
 
