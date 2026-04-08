@@ -2,20 +2,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const leadForm = document.getElementById('leadForm');
 
     if (leadForm) {
-        leadForm.addEventListener('submit', function(e) {
+        leadForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const name = document.getElementById('name').value;
             const course = document.getElementById('interest').value;
-            
+
             // This would normally be the academy's real WhatsApp number.
-            const phoneNumber = "34600000000"; 
-            
-            const message = `¡Hola Elite Academy! Soy ${name}. Estoy interesado en transformar mi futuro con el programa de ${course}. Me gustaría recibir el catálogo completo y conocer las opciones de financiamiento. ¡Gracias!`;
-            
+            const phoneNumber = "3517487208";
+
+            const message = `¡Hola Instituto Superior del Coiffeur! Soy ${name}. Estoy interesado en transformar mi futuro con el curso de ${course}. Me gustaría recibir la informacion completa y conocer el costo de los cursos. ¡Gracias!`;
+
             const encodedMessage = encodeURIComponent(message);
             const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
-            
+
             window.open(whatsappUrl, '_blank');
         });
     }
