@@ -2,6 +2,7 @@
   --matte-black: #0d0d0d;
   --charcoal: #1a1a1a;
   --charcoal-light: #242424;
+
   --violet: #8b5cf6;
   --violet-hover: #a78bfa;
   --white: #ffffff;
@@ -70,13 +71,16 @@ nav a {
 }
 
 nav a:hover {
+
   color: var(--violet);
 }
 
 /* BUTTONS */
 .btn-primary {
   display: inline-block;
+
   background-color: var(--violet);
+
   color: #000;
   padding: 1.2rem 2.5rem;
   font-weight: 800;
@@ -92,11 +96,11 @@ nav a:hover {
 }
 
 .btn-primary:hover {
+
   background-color: var(--violet-hover);
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(139, 92, 246, 0.25);
 }
-
 .btn-secondary {
   display: inline-block;
   background-color: transparent;
@@ -119,14 +123,18 @@ nav a:hover {
 }
 
 .btn-outline {
+
   border: 1px solid var(--violet);
   padding: 0.6rem 1.2rem;
   color: var(--violet) !important;
+
   border-radius: 2px;
 }
 
 .btn-outline:hover {
+
   background-color: var(--violet);
+
   color: #000 !important;
 }
 
@@ -206,11 +214,13 @@ nav a:hover {
 .feature-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+
   border-color: rgba(139, 92, 246, 0.4);
 }
 
 .icon-violet {
   color: var(--violet);
+
   font-size: 2.5rem;
   margin-bottom: 1.8rem;
 }
@@ -258,7 +268,9 @@ nav a:hover {
 }
 
 .course-card:hover {
+
   border-color: rgba(139, 92, 246, 0.5);
+
   box-shadow: 0 20px 40px rgba(0,0,0,0.6);
   transform: translateY(-5px);
 }
@@ -287,7 +299,9 @@ nav a:hover {
   font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
+
   color: var(--violet);
+
 }
 
 .course-details {
@@ -307,7 +321,9 @@ nav a:hover {
 }
 
 .course-details i {
+
   color: var(--violet);
+
   width: 30px;
   font-size: 1.1rem;
 }
@@ -342,7 +358,9 @@ nav a:hover {
 .testimonial-card {
   background-color: var(--charcoal);
   padding: 3.5rem 2.5rem;
+
   border-left: 4px solid var(--violet);
+
   border-radius: 0 3px 3px 0;
   position: relative;
   transition: background-color 0.3s ease;
@@ -353,7 +371,9 @@ nav a:hover {
 }
 
 .stars {
+
   color: var(--violet);
+
   margin-bottom: 1.5rem;
   font-size: 1rem;
   letter-spacing: 2px;
@@ -375,7 +395,9 @@ nav a:hover {
 
 .testimonial-card span {
   font-size: 0.85rem;
+
   color: var(--violet);
+
   text-transform: uppercase;
   letter-spacing: 1px;
   font-weight: 600;
@@ -433,8 +455,10 @@ input, select {
 
 input:focus, select:focus {
   outline: none;
+
   border-color: var(--violet);
   box-shadow: 0 0 0 1px var(--violet);
+
   background-color: var(--charcoal-light);
 }
 
@@ -445,7 +469,9 @@ input::placeholder {
 select {
   appearance: none;
   cursor: pointer;
+
   background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%238b5cf6' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+
   background-repeat: no-repeat;
   background-position: right 1.5rem center;
   background-size: 1.2rem;
