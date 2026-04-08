@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }, observerOptions);
 
     // Initial styles for animations
-    const animatedElements = document.querySelectorAll('.feature-card, .course-card, .testimonial-card');
+    const animatedElements = document.querySelectorAll('.feature-card, .course-card, .gallery-item, .testimonial-card');
     animatedElements.forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
