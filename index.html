@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academia de Peluquería y Barbería Técnica. Formación de élite, rápida salida laboral y prácticas reales. Certificación internacional.">
+  <title>Academia de Peluquería y Barbería | Élite Técnica</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="logo">Instituto Superior del Coiffeur</div>
+    <nav>
+      <a href="#cursos">Cursos</a>
+      <a href="#metodo">Metodología</a>
+      <a href="#testimonios">Comunidad</a>
+      <a href="#contacto" class="btn-outline">Contacto</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Transforma tu pasión<br>en una carrera profecional</h1>
+      <p>Formación 80% práctica - Metodo Belmonte. Dominio técnico asegurado.<br>Salida laboral inmediata.</p>
+      <a href="#contacto" class="btn-primary">Reserva tu Lugar</a>
+    </div>
+  </section>
+
+  <!-- Differentiators -->
+  <section class="features" id="metodo">
+    <div class="feature-card">
+      <i class="fa-solid fa-award icon-violet"></i>
+      <h3>Certificación asegurada</h3>
+      <p>Titulación avalada por profecionales para ejercer en cualquier parte.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-users-viewfinder icon-violet"></i>
+      <h3>Prácticas Reales</h3>
+      <p>Trabaja con modelos reales desde el primer mes. Dominio absoluto de técnicas y herramientas.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-briefcase icon-violet"></i>
+      <p>Conexión directa e inmediata con los salones más exclusivos y barberías premium.</p>
+    </div>
+  </section>
+
+  <!-- Courses Section -->
+  <section class="courses" id="cursos">
+    <h2>Programas de Capacitación</h2>
+    <div class="course-grid">
+      <!-- Course 1 -->
+      <article class="course-card">
+        <div class="course-img" style="background-image: url('assets/course1.png');"></div>
+        <div class="course-info">
+          <h3>Peluquería Unisex</h3>
+          <ul class="course-details">
+            <li><i class="fa-regular fa-clock"></i> 8 Meses</li>
+            <li><i class="fa-solid fa-layer-group"></i> Principiante a Profecional</li>
+          </ul>
+          <p>Domina cortes masculinos y femeninos, tintura, brushing, peinados y todo lo que necesitas saber.</p>
+          <a href="#contacto" class="btn-secondary">Más Información</a>
+        </div>
+      </article>
+
+      <!-- Course 2 -->
+      <article class="course-card">
+        <div class="course-img" style="background-image: url('assets/course2.png');"></div>
+        <div class="course-info">
+          <h3>Barbería</h3>
+          <ul class="course-details">
+            <li><i class="fa-regular fa-clock"></i> 4 Meses</li>
+            <li><i class="fa-solid fa-layer-group"></i> Nivel Intermedio</li>
+          </ul>
+          <p>Especialización en cortes con maquina, tintura, navaja clasica, degrade italiano, perfilado urbano.</p>
+          <a href="#contacto" class="btn-secondary">Más Información</a>
+        </div>
+      </article>
+
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonios">
+    <h2>Nuestros Egresados</h2>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Estudie en el año 2013, hoy tengo mi propia peluquería.. pero aquí hice mis comienzos!.excelentes profesionales, aun recuerdo a algunos.. me enseñaron muy bien, con mucho amor, para a mi, la mejor academia..GRACIAS"</p>
+        <h4>Brenda Gudiño</h4>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Las prácticas con modelos reales desde el inicio te quitan todo el miedo. Salis con la confianza necesaria para abrir tu propio local."</p>
+        <h4>David R.</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Capture Footer Form -->
+  <section class="lead-capture" id="contacto">
+    <div class="form-container">
+      <h2>Da el Primer Paso</h2>
+      <p>Solicita la informacion completa con nuestro asistente vía WhatsApp.</p>
+      <form id="leadForm">
+        <div class="input-group">
+          <input type="text" id="name" placeholder="Nombre completo" required>
+        </div>
+        <div class="input-group">
+          <input type="tel" id="whatsapp" placeholder="Número de WhatsApp" required>
+        </div>
+        <div class="input-group">
+          <select id="interest" required>
+            <option value="" disabled selected>Curso de interés</option>
+            <option value="Peluquería Unisex">Peluquería Unisex</option>
+            <option value="Barbería">Barbería</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary w-full"><i class="fa-brands fa-whatsapp"></i> Solicitar por WhatsApp</button>
+      </form>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2026 Instituto Superior del Coiffeur. Todos los derechos reservados. | Formación de Alto Nivel.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
