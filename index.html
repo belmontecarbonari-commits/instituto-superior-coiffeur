@@ -1,83 +1,162 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Instituto</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academia de Peluquería y Barbería Técnica. Formación de élite, rápida salida laboral y prácticas reales. Certificación internacional.">
+  <title>Academia de Peluquería y Barbería | Élite Técnica</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600&family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <ul>
-                <li><a href="#inicio" class="menu-link">Inicio</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Menú</a>
-                    <div class="dropdown-content">
-                        <a href="#sobre-nosotros" class="menu-link">Sobre Nosotros</a>
-                        <a href="#cursos" class="menu-link">Cursos</a>
-                        <a href="#inscripcion" class="menu-link">Inscripción</a>
-                        <a href="#galeria" class="menu-link">Galería</a>
-                        <a href="#" id="abrir-contacto">Contacto</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-        <h1>Bienvenido al Instituto Superior del Coiffeur</h1>
-        <button onclick="location.href='#inscripcion'">Inscríbete Ya</button>
-    </header>
+  <!-- Header / Navigation -->
+  <header class="navbar">
+    <div class="logo">ELITE ACADEMY</div>
+    <nav>
+      <a href="#cursos">Cursos</a>
+      <a href="#metodo">Metodología</a>
+      <a href="#testimonios">Comunidad</a>
+      <a href="#contacto" class="btn-outline">Contacto</a>
+    </nav>
+  </header>
 
-    <main>  
-        <section id="inicio"></section>
-        <section id="sobre-nosotros"></section>
-        <section id="cursos"></section>
-        <section id="inscripcion"></section>
-
-        <!-- GALERÍA SLIDER -->
-        <section id="galeria">
-            <h2>Galería</h2>
-            <div class="carousel-container">
-                <button class="prev">&#10094;</button>
-                <div class="carousel-track">
-                    <img src="./logos/A1.jpg" alt="Logo A1">
-                    <img src="./logos/A2.jpg" alt="Logo A2">
-                    <img src="./logos/A3.jpg" alt="Logo A3">
-                    <img src="./logos/A4.jpg" alt="Logo A4">
-                    <img src="./logos/A5.jpg" alt="Logo A5">
-                    <img src="./logos/A6.jpg" alt="Logo A6">
-                    <img src="./logos/A7.jpg" alt="Logo A7">
-                    <img src="./logos/A9.jpg" alt="Logo A9">
-                    <img src="./logos/B1.jpg" alt="Logo B1">
-                    <img src="./logos/B2.jpg" alt="Logo B2">
-                    <img src="./logos/B3.jpg" alt="Logo B3">
-                    <img src="./logos/B4.jpg" alt="Logo B4">
-                </div>
-                <button class="next">&#10095;</button>
-            </div>
-        </section>
-    </main>
-
-    <!-- MODAL CONTACTO -->
-    <div id="contacto-modal" class="modal">
-        <div class="modal-content">
-            <span class="cerrar">&times;</span>
-            <h2>Contacto</h2>
-            <p>Teléfono: +54 35117487208</p>
-            <p>Email: institutosuperior18@gmail.com</p>
-            <p>Dirección: Av. Colon 118, Córdoba, Argentina</p>
-            <h3>Redes sociales</h3>
-            <ul class="contact-redes">
-                <li><a href="https://www.facebook.com/Academiadepeluqueriacba/" target="_blank">Facebook</a></li>
-                <li><a href="https://www.instagram.com/institutosuperiordecoiffeur/?hl=es" target="_blank">Instagram</a></li>
-                <li><a href="https://wa.me/54123456789" target="_blank">WhatsApp</a></li>
-            </ul>
-        </div>
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Transforma tu pasión<br>en una carrera de élite</h1>
+      <p>Formación 80% práctica. Dominio técnico asegurado.<br>Salida laboral inmediata para los mejores talentos.</p>
+      <a href="#contacto" class="btn-primary">Reserva tu plaza - Cupos Limitados</a>
     </div>
+  </section>
 
-    <footer>
-        <p>&copy; 2023 Instituto. Todos los derechos reservados.</p>
-    </footer>
+  <!-- Differentiators -->
+  <section class="features" id="metodo">
+    <div class="feature-card">
+      <i class="fa-solid fa-award icon-gold"></i>
+      <h3>Certificación Internacional</h3>
+      <p>Titulación avalada para ejercer con autoridad técnica en cualquier parte del mundo.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-users-viewfinder icon-gold"></i>
+      <h3>Prácticas Reales</h3>
+      <p>Trabaja con modelos reales desde el primer mes. Dominio absoluto de técnicas y herramientas.</p>
+    </div>
+    <div class="feature-card">
+      <i class="fa-solid fa-briefcase icon-gold"></i>
+      <h3>Bolsa de Empleo</h3>
+      <p>Conexión directa e inmediata con los salones más exclusivos y barberías premium.</p>
+    </div>
+  </section>
 
-    <script src="script.js"></script>
+  <!-- Courses Section -->
+  <section class="courses" id="cursos">
+    <h2>Programas de Capacitación</h2>
+    <div class="course-grid">
+      <!-- Course 1 -->
+      <article class="course-card">
+        <div class="course-img" style="background-image: url('assets/course1.png');"></div>
+        <div class="course-info">
+          <h3>Peluquería Integral</h3>
+          <ul class="course-details">
+            <li><i class="fa-regular fa-clock"></i> 9 Meses</li>
+            <li><i class="fa-solid fa-layer-group"></i> Principiante a Creador</li>
+            <li><i class="fa-solid fa-tag"></i> 150€ / Mes</li>
+          </ul>
+          <p>Domina cortes de precisión, texturización, ergonomía con tijeras y visagismo avanzado.</p>
+          <a href="#contacto" class="btn-secondary">Más Información</a>
+        </div>
+      </article>
+
+      <!-- Course 2 -->
+      <article class="course-card">
+        <div class="course-img" style="background-image: url('assets/course2.png');"></div>
+        <div class="course-info">
+          <h3>Barbería Pro</h3>
+          <ul class="course-details">
+            <li><i class="fa-regular fa-clock"></i> 6 Meses</li>
+            <li><i class="fa-solid fa-layer-group"></i> Nivel Intermedio</li>
+            <li><i class="fa-solid fa-tag"></i> 130€ / Mes</li>
+          </ul>
+          <p>Especialización en fades milimétricos, diseño de barbas, navaja clásica y perfilado urbano.</p>
+          <a href="#contacto" class="btn-secondary">Más Información</a>
+        </div>
+      </article>
+
+      <!-- Course 3 -->
+      <article class="course-card">
+        <div class="course-img" style="background-image: url('assets/course3.png');"></div>
+        <div class="course-info">
+          <h3>Colorimetría Avanzada</h3>
+          <ul class="course-details">
+            <li><i class="fa-regular fa-clock"></i> 4 Meses</li>
+            <li><i class="fa-solid fa-layer-group"></i> Maestría Técnica</li>
+            <li><i class="fa-solid fa-tag"></i> 180€ / Mes</li>
+          </ul>
+          <p>Balayage, corrección de color extrema, decoloraciones perfectas y formulación científica.</p>
+          <a href="#contacto" class="btn-secondary">Más Información</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials" id="testimonios">
+    <h2>Nuestros Egresados</h2>
+    <div class="testimonial-grid">
+      <div class="testimonial-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Pasé de no saber coger una tijera a trabajar en el mejor salón de mi ciudad en 6 meses. La metodología es impecable. El nivel de exigencia te prepara para la realidad del sector."</p>
+        <h4>Marco G.</h4>
+        <span>Barbero Residente en BlackFade Studio</span>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"El módulo de colorimetría cambió mi forma de trabajar. Ahora entiendo la química detrás de cada producto. Nunca había visto una academia tan enfocada en la técnica pura."</p>
+        <h4>Laura V.</h4>
+        <span>Colorista Freelance</span>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+        <p>"Las prácticas con modelos reales desde el inicio te quitan todo el miedo. Sales con la confianza técnica necesaria para abrir tu propio local sin titubear."</p>
+        <h4>David R.</h4>
+        <span>Dueño de The Grooming Co.</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lead Capture Footer Form -->
+  <section class="lead-capture" id="contacto">
+    <div class="form-container">
+      <h2>Da el Primer Paso</h2>
+      <p>Solicita nuestro catálogo formativo completo y programas de financiamiento vía WhatsApp.</p>
+      <form id="leadForm">
+        <div class="input-group">
+          <input type="text" id="name" placeholder="Nombre completo" required>
+        </div>
+        <div class="input-group">
+          <input type="tel" id="whatsapp" placeholder="Número de WhatsApp" required>
+        </div>
+        <div class="input-group">
+          <select id="interest" required>
+            <option value="" disabled selected>Curso de interés</option>
+            <option value="Peluquería Integral">Peluquería Integral</option>
+            <option value="Barbería Pro">Barbería Pro</option>
+            <option value="Colorimetría Avanzada">Colorimetría Avanzada</option>
+          </select>
+        </div>
+        <button type="submit" class="btn-primary w-full"><i class="fa-brands fa-whatsapp"></i> Solicitar por WhatsApp</button>
+      </form>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2026 Elite Academy. Todos los derechos reservados. | Formación de Alto Nivel.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>

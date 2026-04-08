@@ -1,58 +1,48 @@
-// --------- GALERÍA CARRUSEL INFINITO + AUTO-PLAY ---------
-const track = document.querySelector(".carousel-track");
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+document.addEventListener('DOMContentLoaded', () => {
+    const leadForm = document.getElementById('leadForm');
 
-// duplicar imágenes para simular loop infinito
-track.innerHTML += track.innerHTML;
-
-// ancho dinámico
-let slideWidth = track.children[0].getBoundingClientRect().width + 20;
-let index = 0;
-
-function moverCarrusel(direccion) {
-    if (direccion === "next") {
-        index++;
-    } else {
-        index--;
-        if (index < 0) index = track.children.length / 2;
+    if (leadForm) {
+        leadForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const course = document.getElementById('interest').value;
+            
+            // This would normally be the academy's real WhatsApp number.
+            const phoneNumber = "34600000000"; 
+            
+            const message = `¡Hola Elite Academy! Soy ${name}. Estoy interesado en transformar mi futuro con el programa de ${course}. Me gustaría recibir el catálogo completo y conocer las opciones de financiamiento. ¡Gracias!`;
+            
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+            
+            window.open(whatsappUrl, '_blank');
+        });
     }
 
-    // resetear cuando llega al final de la primera tanda
-    if (index >= track.children.length / 2) {
-        index = 0;
-        track.style.transition = "none";
-        track.style.transform = `translateX(0px)`;
-        setTimeout(() => {
-            track.style.transition = "transform 0.5s ease-in-out";
-        }, 50);
-    } else {
-        track.style.transform = `translateX(${-slideWidth * index}px)`;
-    }
-}
+    // Add smooth reveal animations for section elements on scroll
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
 
-nextBtn.addEventListener("click", () => moverCarrusel("next"));
-prevBtn.addEventListener("click", () => moverCarrusel("prev"));
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
 
-// autoplay cada 3s
-setInterval(() => moverCarrusel("next"), 3000);
-
-// --------- MODAL CONTACTO ---------
-const modal = document.getElementById("contacto-modal");
-const abrirContacto = document.getElementById("abrir-contacto");
-const cerrarBtn = document.querySelector(".cerrar");
-
-abrirContacto.addEventListener("click", function(e) {
-    e.preventDefault();
-    modal.style.display = "flex";
-});
-
-cerrarBtn.addEventListener("click", () => {
-    modal.style.display = "none";
-});
-
-window.addEventListener("click", (e) => {
-    if (e.target === modal) {
-        modal.style.display = "none";
-    }
+    // Initial styles for animations
+    const animatedElements = document.querySelectorAll('.feature-card, .course-card, .testimonial-card');
+    animatedElements.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+        observer.observe(el);
+    });
 });
