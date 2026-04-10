@@ -73,4 +73,28 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Particles generation for the contact section (Logo Rain)
+    const particlesContainer = document.getElementById('particles-container');
+    if (particlesContainer) {
+        const particleCount = 20; // Número de logos
+        
+        for (let i = 0; i < particleCount; i++) {
+            const particle = document.createElement('div');
+            particle.classList.add('particle');
+            
+            const size = Math.random() * 25 + 20; // Tamaño entre 20px y 45px
+            const left = Math.random() * 100; // Posición horizontal 0% - 100%
+            const duration = Math.random() * 12 + 10; // Duración de caída entre 10s y 22s
+            const delay = Math.random() * 15; // Delay negativo para que estén dispersas al cargar
+            
+            particle.style.width = `${size}px`;
+            particle.style.height = `${size}px`;
+            particle.style.left = `${left}%`;
+            particle.style.animationDuration = `${duration}s`;
+            particle.style.animationDelay = `-${delay}s`;
+            
+            particlesContainer.appendChild(particle);
+        }
+    }
 });
