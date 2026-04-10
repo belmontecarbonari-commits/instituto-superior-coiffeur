@@ -281,16 +281,10 @@ nav a:hover {
   background-size: cover;
   background-position: center;
   border-bottom: 1px solid var(--violet-light);
-  background-color: var(--violet-light);
-  background-blend-mode: multiply;
-  filter: grayscale(100%) contrast(120%);
-  transition: filter 0.5s ease, background-color 0.5s ease, background-blend-mode 0.5s ease;
-}
-
-.course-card:hover .course-img {
   background-color: transparent;
   background-blend-mode: normal;
-  filter: grayscale(0%) contrast(110%);
+  filter: opacity(80%) contrast(95%) brightness(105%);
+  transition: transform 0.5s ease;
 }
 
 .course-info {
@@ -436,7 +430,7 @@ nav a:hover {
 }
 
 .testimonial-card {
-  background-color: var(--charcoal);
+  background-color: var(--violet-light);
   padding: 3.5rem 2.5rem;
 
   border-left: 4px solid var(--violet);
