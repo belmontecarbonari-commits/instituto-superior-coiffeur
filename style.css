@@ -280,12 +280,16 @@ nav a:hover {
   height: 280px;
   background-size: cover;
   background-position: center;
-  border-bottom: 1px solid var(--border-light);
-  filter: grayscale(80%) sepia(10%) contrast(120%);
-  transition: filter 0.5s ease;
+  border-bottom: 1px solid var(--violet-light);
+  background-color: var(--violet-light);
+  background-blend-mode: multiply;
+  filter: grayscale(100%) contrast(120%);
+  transition: filter 0.5s ease, background-color 0.5s ease, background-blend-mode 0.5s ease;
 }
 
 .course-card:hover .course-img {
+  background-color: transparent;
+  background-blend-mode: normal;
   filter: grayscale(0%) contrast(110%);
 }
 
