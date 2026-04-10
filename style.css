@@ -433,7 +433,7 @@ nav a:hover {
   background-color: var(--violet-hover);
   padding: 3.5rem 2.5rem;
 
-  border-left: 4px solid var(--violet);
+  border-left: 4px solid var(--violet-light);
 
   border-radius: 0 3px 3px 0;
   position: relative;
