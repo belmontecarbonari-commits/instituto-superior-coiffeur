@@ -1,4 +1,4 @@
-:root {
+:root { /*aca van los colores de todas la marca (se definen con variables) */
   --matte-black: #0f0a1c;
   --charcoal: #1a103c;
   --charcoal-light: #271654;
@@ -10,6 +10,7 @@
   --border-light: rgba(255, 255, 255, 0.08);
   --font-heading: 'Montserrat', sans-serif;
   --font-body: 'Archivo', sans-serif;
+  --violet-light: #eaddff;
 }
 
 * {
@@ -320,7 +321,7 @@ nav a:hover {
 
 .course-details i {
 
-  color: var(--violet);
+  color: var(--violet-light);
 
   width: 30px;
   font-size: 1.1rem;
@@ -340,9 +341,9 @@ nav a:hover {
 }
 
 .course-info .btn-secondary:hover {
-  background-color: var(--violet);
+  background-color: var(--violet-light);
   color: #ffffff;
-  border-color: var(--violet);
+  border-color: var(--violet-light);
 }
 
 /* PHOTO GALLERY SECTION */
