@@ -304,7 +304,7 @@ nav a:hover {
   font-size: 1.6rem;
   font-weight: 800;
   margin-bottom: 1.5rem;
-  color: #000000;
+  color: var(--violet);
 }
 
 .course-details {
@@ -325,7 +325,7 @@ nav a:hover {
 
 .course-details i {
 
-  color: var(--violet-light);
+  color: var(--violet);
 
   width: 30px;
   font-size: 1.1rem;
@@ -345,9 +345,9 @@ nav a:hover {
 }
 
 .course-info .btn-secondary:hover {
-  background-color: var(--violet-light);
-  color: #ffffff;
-  border-color: var(--violet-light);
+  background-color: var(--violet-hover);
+  color: var(--violet);
+  border-color: var(--violet-hover);
 }
 
 /* PHOTO GALLERY SECTION */
