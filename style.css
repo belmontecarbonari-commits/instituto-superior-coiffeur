@@ -446,7 +446,7 @@ nav a:hover {
 
 .stars {
 
-  color: var(--violet);
+  color: var(--violet-light);
 
   margin-bottom: 1.5rem;
   font-size: 1rem;
@@ -465,13 +465,13 @@ nav a:hover {
   font-size: 1.1rem;
   font-weight: 800;
   margin-bottom: 0.3rem;
-  color: var(--violet);
+  color: var(--violet-light);
 }
 
 .testimonial-card span {
   font-size: 0.85rem;
 
-  color: var(--violet);
+  color: var(--violet-light);
 
   text-transform: uppercase;
   letter-spacing: 1px;
