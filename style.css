@@ -533,7 +533,7 @@ nav a:hover {
 .form-container {
   background-color: var(--matte-black);
   padding: 4.5rem;
-  border: 1px solid var(--border-light);
+  border: 3px solid var(--violet);
   max-width: 650px;
   width: 100%;
   text-align: center;
