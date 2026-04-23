@@ -651,6 +651,52 @@ footer {
   color: var(--violet);
 }
 
+/* ADMIN LOGIN */
+.admin-login-box {
+  background-color: var(--charcoal);
+  padding: 3rem 2.5rem;
+  border-radius: 4px;
+  border: 1px solid var(--violet);
+  width: 90%;
+  max-width: 420px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.5);
+  transform: translateY(-20px);
+  transition: transform 0.3s ease;
+}
+
+.lightbox.active .admin-login-box {
+  transform: translateY(0);
+}
+
+.admin-login-box h3 {
+  color: var(--white);
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.admin-login-box p {
+  color: var(--text-gray);
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+}
+
+.admin-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  color: var(--text-gray);
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+.admin-close:hover {
+  color: var(--violet);
+}
+
 /* Responsive */
 @media (max-width: 900px) {
   .hero h1 { font-size: 3.5rem; }

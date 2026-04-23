@@ -183,9 +183,23 @@
   </section>
   
   <footer>
-
     <p>&copy; 2026 Instituto Superior del Coiffeur. Todos los derechos reservados | Formación de Alto Nivel.</p>
+    <p style="margin-top: 1rem;"><a href="#" id="adminLoginBtn" style="color: var(--text-gray); text-decoration: none; font-size: 0.8rem; opacity: 0.5; transition: opacity 0.3s;"><i class="fa-solid fa-lock"></i> Acceso Admin</a></p>
   </footer>
+
+  <!-- Admin Login Modal -->
+  <div id="adminModal" class="lightbox">
+    <div class="admin-login-box">
+      <span class="admin-close">&times;</span>
+      <h3>Modo Administrador</h3>
+      <p>Ingrese la contraseña para acceder al panel de control.</p>
+      <div class="input-group" style="margin-bottom: 0;">
+        <input type="password" id="adminPassword" placeholder="Contraseña">
+      </div>
+      <div id="adminError" style="color: #ff4d4d; font-size: 0.85rem; margin-top: 0.5rem; display: none; text-align: left;">Contraseña incorrecta. Intente nuevamente.</div>
+      <button id="adminSubmit" class="btn-primary" style="margin-top: 1.5rem; width: 100%; padding: 1rem;">Ingresar</button>
+    </div>
+  </div>
 
   <!-- Lightbox Modal -->
   <div id="lightbox" class="lightbox">

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración - Asistencias</title>
+  <link rel="icon" href="logos/favicon.jpg" type="image/jpeg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      background-color: #f3f4f6; /* Lighter background for excel feel */
+      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .admin-header {
+      background-color: #1a103c; /* charcoal from main theme */
+      color: white;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 3px solid #8b5cf6; /* violet */
+    }
+    .admin-header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+      font-family: 'Montserrat', sans-serif;
+      text-transform: uppercase;
+    }
+    .back-btn {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      background: rgba(255,255,255,0.1);
+      padding: 0.5rem 1rem;
+      border-radius: 4px;
+      transition: background 0.3s;
+    }
+    .back-btn:hover {
+      background: rgba(255,255,255,0.2);
+    }
+    .spreadsheet-container {
+      padding: 2rem;
+      max-width: 1200px;
+      margin: 0 auto;
+      overflow-x: auto;
+    }
+    .toolbar {
+      margin-bottom: 1rem;
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    .toolbar button {
+      background-color: #107c41; /* Excel green */
+      color: white;
+      border: none;
+      padding: 0.6rem 1.2rem;
+      border-radius: 3px;
+      cursor: pointer;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      transition: background 0.3s;
+      font-family: inherit;
+    }
+    .toolbar button:hover {
+      background-color: #0c5e31;
+    }
+    .toolbar button.btn-save {
+      background-color: #8b5cf6; /* Violet */
+    }
+    .toolbar button.btn-save:hover {
+      background-color: #a78bfa;
+    }
+    .excel-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      min-width: 600px;
+    }
+    .excel-table th, .excel-table td {
+      border: 1px solid #d2d2d2;
+      padding: 10px 12px;
+      text-align: left;
+      font-size: 0.95rem;
+    }
+    .excel-table th {
+      background-color: #f3f2f1;
+      font-weight: 600;
+      color: #323130;
+      text-align: center;
+    }
+    .excel-table td[contenteditable="true"] {
+      cursor: text;
+    }
+    .excel-table td[contenteditable="true"]:focus {
+      outline: 2px solid #107c41;
+      outline-offset: -2px;
+      background-color: #f0fdf4;
+    }
+    .select-status {
+      width: 100%;
+      border: none;
+      background: transparent;
+      outline: none;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: 0.95rem;
+      padding: 4px;
+    }
+    .select-status:focus {
+      outline: 2px solid #107c41;
+    }
+    .delete-btn {
+      color: #d13438;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 1.1rem;
+      padding: 5px;
+      border-radius: 3px;
+    }
+    .delete-btn:hover {
+      background-color: #fee2e2;
+    }
+  </style>
+</head>
+<body>
+  <header class="admin-header">
+    <h1><i class="fa-solid fa-table-list"></i> Registro de Asistencias</h1>
+    <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Volver a la web</a>
+  </header>
+
+  <div class="spreadsheet-container">
+    <div class="toolbar">
+      <button onclick="addRow()"><i class="fa-solid fa-plus"></i> Agregar Fila</button>
+      <button class="btn-save" onclick="saveData()"><i class="fa-solid fa-floppy-disk"></i> Guardar Cambios</button>
+      <button onclick="exportToCSV()"><i class="fa-solid fa-file-excel"></i> Exportar a Excel</button>
+    </div>
+
+    <table class="excel-table" id="attendanceTable">
+      <thead>
+        <tr>
+          <th style="width: 50px;">#</th>
+          <th>Nombre del Alumno</th>
+          <th>Curso</th>
+          <th>Fecha (DD/MM/YYYY)</th>
+          <th style="width: 150px;">Estado</th>
+          <th style="width: 80px;">Acción</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody">
+        <!-- Rows will be generated here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    const tableBody = document.getElementById('tableBody');
+    let rowCount = 0;
+
+    function loadData() {
+      const data = JSON.parse(localStorage.getItem('asistenciasData')) || [];
+      if (data.length === 0) {
+        for(let i=0; i<10; i++) addRow();
+      } else {
+        data.forEach(rowData => addRow(rowData));
+      }
+    }
+
+    function addRow(data = {name: '', course: '', date: '', status: 'Presente'}) {
+      rowCount++;
+      const tr = document.createElement('tr');
+      tr.innerHTML = `
+        <td style="text-align: center; background-color: #f3f2f1; color: #605e5c; font-weight: bold;">${rowCount}</td>
+        <td contenteditable="true" placeholder="Nombre...">${data.name}</td>
+        <td contenteditable="true" placeholder="Peluquería / Barbería">${data.course}</td>
+        <td contenteditable="true" placeholder="DD/MM/YYYY">${data.date}</td>
+        <td>
+          <select class="select-status">
+            <option value="Presente" ${data.status === 'Presente' ? 'selected' : ''}>Presente</option>
+            <option value="Ausente" ${data.status === 'Ausente' ? 'selected' : ''}>Ausente</option>
+            <option value="Tarde" ${data.status === 'Tarde' ? 'selected' : ''}>Tarde</option>
+          </select>
+        </td>
+        <td style="text-align: center;">
+          <button class="delete-btn" title="Eliminar fila" onclick="this.closest('tr').remove(); updateRowNumbers();"><i class="fa-solid fa-trash"></i></button>
+        </td>
+      `;
+      tableBody.appendChild(tr);
+    }
+
+    function updateRowNumbers() {
+      const rows = tableBody.querySelectorAll('tr');
+      rowCount = 0;
+      rows.forEach(row => {
+        rowCount++;
+        row.querySelector('td:first-child').textContent = rowCount;
+      });
+    }
+
+    function saveData() {
+      const rows = tableBody.querySelectorAll('tr');
+      const data = [];
+      rows.forEach(row => {
+        const cells = row.querySelectorAll('td');
+        const name = cells[1].textContent.trim();
+        if(name !== '') { 
+          data.push({
+            name: name,
+            course: cells[2].textContent.trim(),
+            date: cells[3].textContent.trim(),
+            status: row.querySelector('.select-status').value
+          });
+        }
+      });
+      localStorage.setItem('asistenciasData', JSON.stringify(data));
+      alert('¡Asistencias guardadas correctamente!');
+    }
+
+    function exportToCSV() {
+        let csvContent = "data:text/csv;charset=utf-8,";
+        csvContent += "Alumno,Curso,Fecha,Estado\n";
+        
+        const rows = tableBody.querySelectorAll('tr');
+        rows.forEach(row => {
+            const cells = row.querySelectorAll('td');
+            const name = cells[1].textContent.trim();
+            if(name !== '') {
+                const course = cells[2].textContent.trim();
+                const date = cells[3].textContent.trim();
+                const status = row.querySelector('.select-status').value;
+                csvContent += `"${name}","${course}","${date}","${status}"\n`;
+            }
+        });
+
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", "registro_asistencias.csv");
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
+    // Security Check: Ensure admin logged in
+    if(sessionStorage.getItem('adminAuth') !== 'true') {
+        window.location.href = 'index.html';
+    } else {
+        loadData();
+    }
+  </script>
+</body>
+</html>

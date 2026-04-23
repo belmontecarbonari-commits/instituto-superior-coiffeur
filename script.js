@@ -97,4 +97,55 @@ document.addEventListener('DOMContentLoaded', () => {
             particlesContainer.appendChild(particle);
         }
     }
+
+    // Admin Login Functionality
+    const adminLoginBtn = document.getElementById('adminLoginBtn');
+    const adminModal = document.getElementById('adminModal');
+    const adminClose = document.querySelector('.admin-close');
+    const adminSubmit = document.getElementById('adminSubmit');
+    const adminPassword = document.getElementById('adminPassword');
+    const adminError = document.getElementById('adminError');
+
+    if (adminLoginBtn && adminModal) {
+        adminLoginBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            adminModal.classList.add('active');
+            adminPassword.value = '';
+            adminError.style.display = 'none';
+            setTimeout(() => adminPassword.focus(), 100);
+        });
+
+        adminClose.addEventListener('click', () => {
+            adminModal.classList.remove('active');
+        });
+
+        adminModal.addEventListener('click', (e) => {
+            if (e.target === adminModal) {
+                adminModal.classList.remove('active');
+            }
+        });
+
+        const tryLogin = () => {
+            if (adminPassword.value === 'academia2020') {
+                sessionStorage.setItem('adminAuth', 'true');
+                window.location.href = 'asistencias.html';
+            } else {
+                adminError.style.display = 'block';
+                adminPassword.style.borderColor = '#ff4d4d';
+            }
+        };
+
+        adminSubmit.addEventListener('click', tryLogin);
+
+        adminPassword.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                tryLogin();
+            }
+        });
+        
+        adminPassword.addEventListener('input', () => {
+            adminError.style.display = 'none';
+            adminPassword.style.borderColor = '';
+        });
+    }
 });
