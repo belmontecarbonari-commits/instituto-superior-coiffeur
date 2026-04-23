@@ -128,7 +128,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const tryLogin = () => {
             if (adminPassword.value === 'academia2020') {
                 sessionStorage.setItem('adminAuth', 'true');
-                window.location.href = 'asistencias.html';
+                window.location.href = 'asistencias.html?v=' + new Date().getTime();
             } else {
                 adminError.style.display = 'block';
                 adminPassword.style.borderColor = '#ff4d4d';
