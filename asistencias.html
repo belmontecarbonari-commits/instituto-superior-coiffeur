@@ -148,9 +148,12 @@
         <tr>
           <th style="width: 50px;">#</th>
           <th>Nombre del Alumno</th>
+          <th>Teléfono</th>
+          <th>Días</th>
           <th>Curso</th>
           <th>Fecha (DD/MM/YYYY)</th>
-          <th style="width: 150px;">Estado</th>
+          <th style="width: 130px;">Asistencia</th>
+          <th style="width: 140px;">Pago</th>
           <th style="width: 80px;">Acción</th>
         </tr>
       </thead>
@@ -173,19 +176,32 @@
       }
     }
 
-    function addRow(data = {name: '', course: '', date: '', status: 'Presente'}) {
+    function addRow(data = {name: '', phone: '', days: '', course: '', date: '', status: 'Presente', payment: 'Al Día'}) {
+      data.phone = data.phone || '';
+      data.days = data.days || '';
+      data.payment = data.payment || 'Al Día';
+
       rowCount++;
       const tr = document.createElement('tr');
       tr.innerHTML = `
         <td style="text-align: center; background-color: #f3f2f1; color: #605e5c; font-weight: bold;">${rowCount}</td>
         <td contenteditable="true" placeholder="Nombre...">${data.name}</td>
+        <td contenteditable="true" placeholder="Teléfono...">${data.phone}</td>
+        <td contenteditable="true" placeholder="Lunes/Miércoles...">${data.days}</td>
         <td contenteditable="true" placeholder="Peluquería / Barbería">${data.course}</td>
         <td contenteditable="true" placeholder="DD/MM/YYYY">${data.date}</td>
         <td>
-          <select class="select-status">
+          <select class="select-status asistencia-status">
             <option value="Presente" ${data.status === 'Presente' ? 'selected' : ''}>Presente</option>
             <option value="Ausente" ${data.status === 'Ausente' ? 'selected' : ''}>Ausente</option>
             <option value="Tarde" ${data.status === 'Tarde' ? 'selected' : ''}>Tarde</option>
+          </select>
+        </td>
+        <td>
+          <select class="select-status payment-status" style="color: ${data.payment === 'Atrasado' ? '#d13438' : (data.payment === 'Al Día' ? '#107c41' : '#ffb900')}; font-weight: bold;" onchange="this.style.color = this.value === 'Atrasado' ? '#d13438' : (this.value === 'Al Día' ? '#107c41' : '#ffb900')">
+            <option value="Al Día" ${data.payment === 'Al Día' ? 'selected' : ''}>Al Día</option>
+            <option value="Atrasado" ${data.payment === 'Atrasado' ? 'selected' : ''}>Atrasado</option>
+            <option value="Pendiente" ${data.payment === 'Pendiente' ? 'selected' : ''}>Pendiente</option>
           </select>
         </td>
         <td style="text-align: center;">
@@ -213,9 +229,12 @@
         if(name !== '') { 
           data.push({
             name: name,
-            course: cells[2].textContent.trim(),
-            date: cells[3].textContent.trim(),
-            status: row.querySelector('.select-status').value
+            phone: cells[2].textContent.trim(),
+            days: cells[3].textContent.trim(),
+            course: cells[4].textContent.trim(),
+            date: cells[5].textContent.trim(),
+            status: row.querySelector('.asistencia-status').value,
+            payment: row.querySelector('.payment-status').value
           });
         }
       });
@@ -225,17 +244,20 @@
 
     function exportToCSV() {
         let csvContent = "data:text/csv;charset=utf-8,";
-        csvContent += "Alumno,Curso,Fecha,Estado\n";
+        csvContent += "Alumno,Teléfono,Días,Curso,Fecha,Asistencia,Pago\n";
         
         const rows = tableBody.querySelectorAll('tr');
         rows.forEach(row => {
             const cells = row.querySelectorAll('td');
             const name = cells[1].textContent.trim();
             if(name !== '') {
-                const course = cells[2].textContent.trim();
-                const date = cells[3].textContent.trim();
-                const status = row.querySelector('.select-status').value;
-                csvContent += `"${name}","${course}","${date}","${status}"\n`;
+                const phone = cells[2].textContent.trim();
+                const days = cells[3].textContent.trim();
+                const course = cells[4].textContent.trim();
+                const date = cells[5].textContent.trim();
+                const status = row.querySelector('.asistencia-status').value;
+                const payment = row.querySelector('.payment-status').value;
+                csvContent += `"${name}","${phone}","${days}","${course}","${date}","${status}","${payment}"\n`;
             }
         });
 
