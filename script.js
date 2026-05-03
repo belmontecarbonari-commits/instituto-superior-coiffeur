@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Lightbox functionality
-    const galleryItems = document.querySelectorAll('.gallery-item');
+    const galleryItems = document.querySelectorAll('.gallery-item, .diploma-wrapper');
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.querySelector('.lightbox-close');
