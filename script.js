@@ -1,4 +1,21 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+    const navbarLinks = document.getElementById('navbar-links');
+    
+    if (mobileMenuBtn && navbarLinks) {
+        mobileMenuBtn.addEventListener('click', () => {
+            navbarLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        navbarLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navbarLinks.classList.remove('active');
+            });
+        });
+    }
+
     const leadForm = document.getElementById('leadForm');
 
     if (leadForm) {
