@@ -364,6 +364,39 @@ nav a:hover {
   opacity: 1;
 }
 
+/* VIDEO SHOWCASE */
+.video-showcase {
+  margin-top: 2rem;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  border: 2px solid rgba(139, 92, 246, 0.4);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  height: 150px;
+  position: relative;
+  background-color: var(--matte-black);
+}
+
+.video-showcase:hover {
+  transform: scale(1.08) translateY(-10px);
+  z-index: 10;
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.5);
+  border-color: var(--violet);
+}
+
+.showcase-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.85;
+  transition: opacity 0.4s ease;
+}
+
+.video-showcase:hover .showcase-video {
+  opacity: 1;
+}
+
 /* COURSES SECTION */
 .courses {
   padding: 6rem 5%;
