@@ -154,7 +154,7 @@ nav a:hover {
   padding: 120px 20px 40px; /* Padding top accounts for navbar */
   overflow: hidden;
   background-color: var(--matte-black);
-  background-image: url('logos/FOTOfondoInicio.png');
+  background-image: url('logos/fotoparainicio.jpg');
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
